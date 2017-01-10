@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE shardingConfig SYSTEM "shardtable-config.dtd">
+
+<shardingConfig>
+    <!--
+        ignoreList可选配置
+        配置的mapperId会被分表参加忽略解析，不会对sql进行修改
+    -->
+    <!--<ignoreList>-->
+        <!--<value></value>-->
+    <!--</ignoreList>-->
+
+    <!--
+        可选配置
+        只有在parseList范围内并且不再ignoreList内的sql才会被解析和修改
+    -->
+    <!--<parseList>-->
+        <!--<value></value>-->
+    <!--</parseList>-->
+    <rule id="userIdHash10" strategyClass="com.muy.common.datasource.table.strategy.impl.HashTenStrategyRule" key="userId" expression="userId % 10"/>
+    <rule id="yyyymmHash" strategyClass="com.muy.common.datasource.table.strategy.impl.YmStrategyRule" key="yyyymm" expression="yyyymm"/>
+    <rule id="taskIdHash10" strategyClass="com.muy.common.datasource.table.strategy.impl.HashTenStrategyRule" key="taskId" expression="taskId % 10"/>
+    <!-- 配置分表策略 -->
+    <strategy tableName="by_user_info" rule="userIdHash10"/>
+    <strategy tableName="by_settle_h" rule="yyyymmHash"/>
+    <strategy tableName="by_settle_detail_h" rule="yyyymmHash"/>
+    <strategy tableName="by_task_user" rule="taskIdHash10"/>
+    <strategy tableName="by_user_task" rule="userIdHash10"/>
+    <strategy tableName="by_user_task_history" rule="userIdHash10"/>
+    <strategy tableName="by_task_praise" rule="taskIdHash10"/>
+    <strategy tableName="by_task_comment" rule="taskIdHash10"/>
+    <strategy tableName="by_task_audit_schedule" rule="taskIdHash10"/>
+    <strategy tableName="by_settle_message_h" rule="yyyymmHash"/>
+</shardingConfig>

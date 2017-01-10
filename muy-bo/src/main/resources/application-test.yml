@@ -1,0 +1,10 @@
+server:
+  port: 9001
+
+
+logging:
+  level:
+    com.muy: DEBUG
+    org.mybatis: DEBUG
+    org.springframework: DEBUG
+    java.sql: DEBUG

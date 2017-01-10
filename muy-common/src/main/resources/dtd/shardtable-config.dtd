@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT shardingConfig (ignoreList?,parseList?,rule*,strategy*)>
+<!ELEMENT ignoreList (value+)>
+<!ELEMENT parseList (value+)>
+<!ELEMENT value (#PCDATA)>
+<!ELEMENT rule EMPTY>
+<!ATTLIST rule
+        id ID #REQUIRED
+        strategyClass CDATA #REQUIRED
+        key CDATA #REQUIRED
+        expression CDATA #REQUIRED>
+<!ELEMENT strategy EMPTY>
+<!ATTLIST strategy
+tableName CDATA #REQUIRED
+rule IDREFS #IMPLIED>

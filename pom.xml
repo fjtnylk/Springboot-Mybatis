@@ -22,6 +22,7 @@
 		<module>muy-common</module>
 		<module>muy-bo</module>
 		<module>muy-api</module>
+		<module>muy-pay</module>
 	</modules>
 
 	<properties>

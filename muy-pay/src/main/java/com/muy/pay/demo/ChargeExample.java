@@ -14,7 +14,7 @@ import java.util.Map;
 public class ChargeExample {
     private String appId;
 
-    ChargeExample(String appId) {
+    public ChargeExample(String appId) {
         this.appId = appId;
     }
 
@@ -46,14 +46,14 @@ public class ChargeExample {
         chargeMap.put("body", "Your Body");
         String orderNo = new Date().getTime() + Main.randomString(7);
         chargeMap.put("order_no", orderNo);// 推荐使用 8-20 位，要求数字或字母，不允许其他字符
-        chargeMap.put("channel", "wx");// 支付使用的第三方支付渠道取值，请参考：https://www.pingxx.com/api#api-c-new
+        chargeMap.put("channel", "wx_pub");// 支付使用的第三方支付渠道取值，请参考：https://www.pingxx.com/api#api-c-new
         chargeMap.put("client_ip", "127.0.0.1"); // 发起支付请求客户端的 IP 地址，格式为 IPV4，如: 127.0.0.1
         Map<String, String> app = new HashMap<String, String>();
         app.put("id", appId);
         chargeMap.put("app", app);
 
         Map<String, Object> extra = new HashMap<String, Object>();
-//        extra.put("open_id", "USER_OPENID");
+        extra.put("open_id", "gh_41d997a796a5");
         chargeMap.put("extra", extra);
         try {
             //发起交易请求

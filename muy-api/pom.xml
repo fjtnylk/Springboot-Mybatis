@@ -5,7 +5,7 @@
 
 	<groupId>com.muy</groupId>
 	<artifactId>muy-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${muy.version}</version>
 	<packaging>jar</packaging>
 
 	<name>muy-api</name>
@@ -14,14 +14,14 @@
 	<parent>
 		<groupId>com.muy</groupId>
 		<artifactId>muy-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>${muy.version}</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.muy</groupId>
 			<artifactId>muy-common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${muy.version}</version>
 		</dependency>
 
 		<dependency>
@@ -42,5 +42,11 @@
 	</dependencies>
 
 	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
 </project>

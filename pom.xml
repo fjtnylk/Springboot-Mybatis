@@ -5,7 +5,7 @@
 
 	<groupId>com.muy</groupId>
 	<artifactId>muy-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${muy.version}</version>
 	<packaging>pom</packaging>
 
 	<name>muy</name>
@@ -34,6 +34,7 @@
 		<jsqlparser.version>0.9.5</jsqlparser.version>
 		<mybatis.version>1.2.0</mybatis.version>
 		<spring.version>4.3.5.RELEASE</spring.version>
+		<muy.version>1.0.0</muy.version>
 	</properties>
 
 	<dependencies>
